@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Sidebar Navigation -->
+      <nav
+        id="sidebarMenu"
+        class="collapse d-lg-block sidebar collapse bg-body-secondary"
+      >
+        <div class="position-sticky">
+          <img src="Logo.png" class="p-5" height="180" width="180" />
+          <div class="list-group list-group-flush mt-4">
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-2 ripple bg-body-secondary d-flex justify-content-between align-items-center"
+              aria-current="true"
+            >
+              <span class="mx-3">Overview</span>
+              <i class="fa-solid fa-greater-than"></i>
+            </a>
+
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-2 ripple bg-body-secondary d-flex justify-content-between align-items-center"
+            >
+              <span class="mx-3">System Setting</span>
+              <i class="fa-solid fa-greater-than"></i>
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-2 ripple bg-body-secondary d-flex justify-content-between align-items-center"
+            >
+              <span class="mx-3">Users and group</span>
+              <i class="fa-solid fa-greater-than"></i>
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-2 ripple active bg-black text-warning d-flex justify-content-between align-items-center"
+              ><span class="mx-3">Storage/file</span>
+              <i class="fa-solid fa-greater-than"></i>
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-2 ripple bg-body-secondary d-flex justify-content-between align-items-center"
+            >
+              <span class="mx-3">Plugin center</span>
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-2 ripple bg-body-secondary d-flex justify-content-between align-items-center"
+              ><span class="mx-3">Safety control</span>
+              <i class="fa-solid fa-greater-than"></i>
+            </a>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action py-2 ripple bg-body-secondary d-flex justify-content-between align-items-center"
+              ><span class="mx-3">Server</span>
+              <i class="fa-solid fa-greater-than"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <!-- Main Navigation -->
+      <nav
+        id="main-navbar"
+        class="navbar navbar-expand-lg navbar-light bg-white fixed-top"
+      >
+        <div
+          class="container-fluid d-flex justify-content-between align-items-center"
+        >
+          <div class="d-flex align-items-center">
+            <i class="fas fa-cog fs-2 me-2"></i>
+            <h5 class="mb-0">System Setting</h5>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#sidebarMenu"
+            aria-controls="sidebarMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- Main layout -->
+    <main class="mt-5 overflow-auto">
+      <!-- Container for storage/file sharing -->
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center bg-warning p-2 d-none mt-4"
+        id="containerContent"
+      >
+        <div class="col-md-3">
+          <h6>Storage/File -&gt; Share</h6>
+        </div>
+        <div class="col-md-9 d-flex justify-content-end align-items-center">
+          <div class="input-group w-25 mx-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Please enter the string"
+            />
+          </div>
+          <button type="button" class="btn btn-dark text-warning mx-3">
+            <i class="fa-solid fa-xmark"></i> Cancel Sharing
+          </button>
+          <button type="button" class="btn btn-dark text-warning">
+            <i class="fa-solid fa-download"></i> Export
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center bg-warning p-2 d-none mt-4"
+        id="containerContent1"
+      >
+        <div class="col-md-3">
+          <h6>Storage/File -&gt; Share</h6>
+        </div>
+        <div class="col-md-9 d-flex justify-content-end align-items-center">
+          <button type="button" class="btn btn-dark text-warning">
+            <i class="fa-solid fa-download"></i> Export
+          </button>
+        </div>
+      </div>
+
+      <div class="container-fluid pt-4">
+        <!-- Tabs for navigation -->
+        <nav>
+          <div class="nav nav-underline" id="nav-tab" role="tablist">
+            <button
+              class="nav-link active"
+              id="nav-sharing-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-sharing"
+              type="button"
+              role="tab"
+              aria-controls="nav-sharing"
+              aria-selected="true"
+            >
+              Sharing
+            </button>
+            <button
+              class="nav-link"
+              id="nav-report-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-report"
+              type="button"
+              role="tab"
+              aria-controls="nav-report"
+              aria-selected="false"
+            >
+              Sharing Reports
+            </button>
+          </div>
+        </nav>
+        <!-- Tab Content -->
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="nav-sharing"
+            role="tabpanel"
+            aria-labelledby="nav-sharing-tab"
+          >
+            <div class="container-fluid mt-4">
+              <div class="row justify-content-start">
+                <div
+                  class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-3"
+                >
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-block d-inline-block mb-2"
+                  >
+                    Today
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-block d-inline-block mx-3 mb-2"
+                  >
+                    Last 30 days
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-block d-inline-block mb-2"
+                  >
+                    All
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-block d-inline-block mx-3 mb-2"
+                  >
+                    Customized
+                  </button>
+                  <div class="dropdown d-inline-block mr-4 mb-2">
+                    <a
+                      class="btn btn-outline-secondary dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Select User
+                    </a>
+                  </div>
+                  <div class="dropdown d-inline-block mx-3 mb-2">
+                    <a
+                      class="btn btn-outline-secondary dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Type
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-fluid mt-4 bg-secondary p-2 text-white">
+              <div class="row">
+                <ul
+                  class="list-inline mb-0 d-flex justify-content-between flex-wrap"
+                >
+                  <li class="list-inline-item mt-2 mx-3"><a>Sharer</a></li>
+                  <li class="list-inline-item mt-2"><a>Name</a></li>
+                  <li class="list-inline-item mt-2"><a>Type</a></li>
+                  <li class="list-inline-item mt-2"><a>Details</a></li>
+                  <li class="list-inline-item mt-2"><a>View</a></li>
+                  <li class="list-inline-item dropdown">
+                    <button
+                      class="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Downloads
+                    </button>
+                  </li>
+                  <li class="list-inline-item mt-2"><a>Expiration</a></li>
+                  <li class="list-inline-item dropdown">
+                    <button
+                      class="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Time
+                    </button>
+                  </li>
+                  <li class="list-inline-item mt-2 mx-3"><a>Action</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="container-fluid mt-4 d-flex justify-content-center align-items-center"
+            >
+              <div class="row">
+                <div class="col text-center">
+                  <i
+                    class="fa-solid fa-folder-open text-warning"
+                    style="font-size: 100px"
+                  ></i>
+                  <h6 class="mt-3">No Data Found</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="nav-report"
+            role="tabpanel"
+            aria-labelledby="nav-report-tab"
+          >
+            <div class="container-fluid mt-4">
+              <div class="row justify-content-center justify-content-lg-start">
+                <div class="col-sm-6 col-md-12 col-lg-12 mb-3">
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-block d-inline-block mb-2 mb-lg-0"
+                  >
+                    Today
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-block d-inline-block mx-3 mb-2 mb-lg-0"
+                  >
+                    Last 30 days
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-block d-inline-block mb-2 mb-lg-0"
+                  >
+                    All
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary btn-block d-inline-block mx-3 mb-2 mb-lg-0"
+                  >
+                    Customized
+                  </button>
+                  <div class="dropdown d-inline-block mr-4">
+                    <a
+                      class="btn btn-outline-secondary dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Select User
+                    </a>
+                  </div>
+                  <div class="dropdown d-inline-block mx-3">
+                    <a
+                      class="btn btn-outline-secondary dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Type
+                    </a>
+                  </div>
+                  <div class="dropdown d-inline-block">
+                    <a
+                      class="btn btn-outline-secondary dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Bulk Operations
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-fluid mt-4 bg-secondary p-2 text-white">
+              <div class="row">
+                <ul
+                  class="list-inline mb-0 d-flex flex-wrap justify-content-center justify-content-lg-between"
+                >
+                  <li class="list-inline-item mt-2 mx-3">
+                    <a>Whistleblower</a>
+                  </li>
+                  <li class="list-inline-item mt-2">
+                    <a>Report sharing</a>
+                  </li>
+                  <li class="list-inline-item mt-2">
+                    <a>Reason for reporting</a>
+                  </li>
+                  <li class="list-inline-item dropdown mt-2">
+                    <button
+                      class="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Time
+                    </button>
+                  </li>
+                  <li class="list-inline-item mt-2">
+                    <a>Process result</a>
+                  </li>
+                  <li class="list-inline-item mt-2 mx-3">
+                    <a>Action</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="container-fluid mt-4 d-flex justify-content-center align-items-center"
+            >
+              <div class="row">
+                <div class="col text-center">
+                  <i
+                    class="fa-solid fa-folder-open text-warning"
+                    style="font-size: 100px"
+                  ></i>
+                  <h6 class="mt-3">No Data Found</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-light text-center text-lg-start">
+      <div class="container p-1">
+        <div class="row">
+          <div class="col-6 col-xs-6 col-sm-6 col-lg-6 col-md-6 mb-4 mb-md-0">
+            <button class="btn btn-dark">File</button>
+          </div>
+          <div
+            class="col-6 col-xs-6 col-lg-6 col-sm-6 col-md-6 mb-4 mb-md-0 d-flex align-items-center justify-content-center justify-content-md-end"
+          >
+            <img src="Logo.png" alt="Logo" height="30" />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
