@@ -62,3 +62,27 @@ footer .btn {
 footer .col-lg-6 {
   padding-top: 10px;
 }
+
+@media (max-width: 400px) {
+  #main-navbar .container-fluid {
+    flex-wrap: nowrap;
+  }
+  #main-navbar .navbar-toggler {
+    margin-left: auto;
+  }
+  #main-navbar .fas {
+    font-size: 1.5rem;
+  }
+  #main-navbar h5 {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+.fa-folder-open {
+  font-size: 8vw;
+}
+@media (max-width: 576px) {
+  .fa-folder-open {
+    font-size: 16vw;
+  }
+}
